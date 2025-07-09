@@ -10,14 +10,14 @@ function calculateRentalCost(days) {
   const LONG_TERM = 7;
   const LONG_TERM_DISCOUNT = 50;
 
-  let finalPrice = days * CAR_PRICE_PER_DAY;
+  const finalPrice = days * CAR_PRICE_PER_DAY;
 
   if (days >= LONG_TERM) {
-    return (finalPrice -= LONG_TERM_DISCOUNT);
+    return finalPrice - LONG_TERM_DISCOUNT;
   }
 
-  if (days >= SHORT_TERM && days <= LONG_TERM) {
-    return (finalPrice -= SHORT_TERM_DISCOUNT);
+  if (days >= SHORT_TERM) {
+    return finalPrice - SHORT_TERM_DISCOUNT;
   }
 
   return finalPrice;
